@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Houston's trusted roofing and construction contractor. Free inspections, $0 down financing, and 10-year warranties across Houston, Katy, Cypress, Sugar Land, Conroe, and the surrounding area.">
+<title>JG Roofing & Construction | Built to Protect. Crafted to Last.</title>
+<link rel="icon" href="assets/images/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="page">
+
+    <!-- STICKY CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="tel:8324300148" class="sticky-cta-phone">&#128222; (832) 430-0148</a>
+        <a href="#mid-form" class="sticky-cta-form">Free Estimates &rarr;</a>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav">
+        <a href="#home" class="nav-logo">
+            <img src="assets/images/logo-icon.png" alt="JG Roofing & Construction">
+            <span class="nav-logo-text">JG ROOFING<em>&amp; CONSTRUCTION</em></span>
+        </a>
+        <div class="nav-links">
+            <div class="nav-dropdown">
+                <a href="#about">About Us &#9662;</a>
+                <div class="nav-dropdown-menu">
+                    <a href="#founder">Founder &amp; CEO</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <a href="#services">Services &#9662;</a>
+                <div class="nav-dropdown-menu">
+                    <a href="#services">Residential Roofing</a>
+                    <a href="#services">Commercial &amp; Multi-Family</a>
+                    <a href="#services">Storm Damage</a>
+                    <a href="#services">General Construction</a>
+                    <a href="#services">Roofing Maintenance</a>
+                    <a href="#services">Gutters</a>
+                </div>
+            </div>
+            <a href="#guarantee">Premium Roof</a>
+            <div class="nav-dropdown">
+                <a href="#areas">Locations &#9662;</a>
+                <div class="nav-dropdown-menu">
+                    <a href="#areas">Houston</a>
+                    <a href="#areas">Katy</a>
+                    <a href="#areas">Cypress</a>
+                    <a href="#areas">Sugar Land</a>
+                    <a href="#areas">Conroe</a>
+                </div>
+            </div>
+            <a href="#reviews">Reviews</a>
+            <a href="tel:8324300148" class="nav-phone">(832) 430-0148</a>
+            <a href="#mid-form" class="nav-cta">Get Free Estimate &rarr;</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-ambient"></div>
+        <div class="hero-left">
+            <div class="google-badge">
+                <div class="tb-card">
+                    <div class="tb-logo">
+                        <svg viewBox="0 0 24 24" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                    <div class="tb-content">
+                        <div class="tb-rating">4.9 <span class="tb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                        <div class="tb-meta">Google &middot; 100+ Reviews</div>
+                    </div>
+                </div>
+                <div class="tb-card">
+                    <div class="tb-logo">
+                        <svg viewBox="0 0 40 40" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="36" height="36" rx="4" fill="#005A8B"/>
+                            <text x="20" y="16" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-size="9" font-weight="900">BBB</text>
+                            <text x="20" y="30" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-size="13" font-weight="900">A+</text>
+                        </svg>
+                    </div>
+                    <div class="tb-content">
+                        <div class="tb-rating">A+ Rating</div>
+                        <div class="tb-meta">BBB Accredited</div>
+                    </div>
+                </div>
+                <div class="tb-card">
+                    <div class="tb-logo">
+                        <svg viewBox="0 0 40 40" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="18" fill="#A08563"/>
+                            <text x="20" y="16" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">&#9733;&#9733;&#9733;</text>
+                            <text x="20" y="24" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-size="11" font-weight="900">3</text>
+                            <text x="20" y="34" text-anchor="middle" fill="#fff" font-size="5" font-weight="700">BEST</text>
+                        </svg>
+                    </div>
+                    <div class="tb-content">
+                        <div class="tb-rating">Top Rated</div>
+                        <div class="tb-meta">ThreeBest Rated</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-badge">SUMMER SPECIAL &middot; $2,000 OFF &middot; LIMITED TO 15 HOMEOWNERS</div>
+            <h1>Built To Protect.<br><span class="accent">Crafted To Last.</span></h1>
+            <p class="hero-sub">We've protected over 5,300 Houston-area homes with the same simple promise: do it once, do it right, and stand behind it for life. Right now, save $2,000 on roof replacement. Plus, our $199 roof tune-up applies toward a full replacement.</p>
+            <div class="hero-props">
+                <div class="hero-prop"><span class="hero-check">&#10003;</span> $2,000 Off Roof Replacement</div>
+                <div class="hero-prop"><span class="hero-check">&#10003;</span> $199 Tune-Up Applies Toward Replacement</div>
+                <div class="hero-prop"><span class="hero-check">&#10003;</span> Limited to 15 Homeowners. Ends <span class="promo-date"></span>.</div>
+            </div>
+            <div class="hero-btn-row">
+                <a href="#mid-form" class="btn-primary">Get Free Estimate &rarr;</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="msf">
+                <div class="msf-header">
+                    <h3>Schedule A Free No-Pressure</h3>
+                    <h3 class="accent">Roof Inspection Today!</h3>
+                    <div class="msf-progress">
+                        <div class="msf-dot active" id="d1"></div>
+                        <div class="msf-dot" id="d2"></div>
+                        <div class="msf-dot" id="d3"></div>
+                    </div>
+                    <div class="msf-labels">
+                        <span class="active" id="l1">Service</span>
+                        <span id="l2">Contact</span>
+                        <span id="l3">Location</span>
+                    </div>
+                </div>
+                <form class="msf-body" id="heroForm">
+                    <input type="hidden" name="_subject" value="New Free Estimate Request -- JG Roofing & Construction">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="Form" value="Hero Schedule Inspection Form">
+                    <input type="hidden" name="service" id="heroService" value="">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <div class="msf-step active" id="s1">
+                        <p class="msf-q">What do you need help with?</p>
+                        <div class="msf-sgrid">
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <div class="nm">Roof Replacement</div>
+                            </div>
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                <div class="nm">Emergency Repair</div>
+                            </div>
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <div class="nm">Storm Damage</div>
+                            </div>
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                <div class="nm">Roof Inspection</div>
+                            </div>
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                                <div class="nm">Gutters &amp; Siding</div>
+                            </div>
+                            <div class="msf-scard" onclick="ss(this)">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                <div class="nm">Maintenance</div>
+                            </div>
+                        </div>
+                        <button class="msf-btn msf-next off" id="nb1" onclick="gs(2)">Continue &rarr;</button>
+                        <div class="msf-trust"><span><span class="ck">&#10003;</span> Free</span><span><span class="ck">&#10003;</span> No obligation</span><span><span class="ck">&#10003;</span> 60 seconds</span></div>
+                    </div>
+                    <div class="msf-step" id="s2">
+                        <div class="msf-urgency">&#9201; <strong>3 homeowners</strong> in your area requested inspections today</div>
+                        <p class="msf-q">How can we reach you?</p>
+                        <div class="msf-row">
+                            <input class="msf-input" type="text" name="first_name" placeholder="First name" required>
+                            <input class="msf-input" type="text" name="last_name" placeholder="Last name" required>
+                        </div>
+                        <input class="msf-input" type="tel" name="phone" placeholder="Phone number" required>
+                        <input class="msf-input" type="email" name="email" placeholder="Email address" required>
+                        <button class="msf-btn msf-next" type="button" onclick="if(validateStep('s2')) gs(3)">Almost done &rarr;</button>
+                        <button class="msf-btn msf-back" type="button" onclick="gs(1)">&larr; Back</button>
+                    </div>
+                    <div class="msf-step" id="s3">
+                        <p class="msf-q">Where's the property?</p>
+                        <input class="msf-input" type="text" name="address" placeholder="Street address" required>
+                        <input class="msf-input" type="text" name="city" placeholder="City" required>
+                        <div class="msf-row">
+                            <select class="msf-input" name="state">
+                                <option value="">State</option>
+                                <option>Texas</option>
+                            </select>
+                            <input class="msf-input" type="text" name="zip" placeholder="Zip" required>
+                        </div>
+                        <button class="msf-btn msf-submit" type="submit">Schedule My Free Inspection &rarr;</button>
+                        <button class="msf-btn msf-back" type="button" onclick="gs(2)">&larr; Back</button>
+                        <div class="msf-trust"><span><span class="ck">&#10003;</span> Fast response</span><span><span class="ck">&#10003;</span> No spam</span></div>
+                    </div>
+                    <div class="msf-step" id="s4">
+                        <div class="msf-done">
+                            <div class="msf-done-icon">&#10003;</div>
+                            <h3>Thank You!</h3>
+                            <p>Your submission was received &mdash; we'll get right back to you as soon as possible.</p>
+                        </div>
+                    </div>
+                </form>
+                <div class="owner-quote-card">
+                    <div class="oqc-quote">&ldquo;Built to Protect. Crafted to Last.&rdquo;</div>
+                    <div class="oqc-bottom">
+                        <div class="oqc-signature">JG</div>
+                        <div class="oqc-divider-v"></div>
+                        <div class="oqc-title">Founder &amp; CEO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMER PROMOS -->
+    <section class="promos">
+        <div class="promos-head">
+            <div class="section-label">Summer Specials</div>
+            <h2>Two Ways to Protect Your Home This Summer.</h2>
+        </div>
+        <div class="promos-grid promos-grid-2">
+            <div class="promo-card featured">
+                <div class="promo-badge">Most Popular</div>
+                <div class="promo-amount">$2,000 OFF</div>
+                <div class="promo-title">Roof Replacement.</div>
+                <p class="promo-desc">Full tear-off and replacement with premium materials. $2,000 off this summer only.</p>
+                <a href="#mid-form" class="promo-cta">Claim This Offer &rarr;</a>
+            </div>
+            <div class="promo-card">
+                <div class="promo-badge green">Smart Start</div>
+                <div class="promo-amount">$199</div>
+                <div class="promo-title">Roof Tune-Up + Inspection.</div>
+                <p class="promo-desc">Professional inspection and tune-up. Credit applies toward a full replacement if you decide to move forward.</p>
+                <a href="#mid-form" class="promo-cta">Book Tune-Up &rarr;</a>
+            </div>
+        </div>
+        <div class="promos-urgency">
+            <div class="promos-urgency-dot"></div>
+            <span class="promos-urgency-text">Limited to 15 homeowners in your area. Offer ends <span class="promo-date"></span>.</span>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="svc-head">
+            <div class="section-label">Our services</div>
+            <h2 class="svc-title">Complete Home Protection.<br><em>One Trusted Team.</em></h2>
+            <div class="svc-sub">From your roof to your next remodel, we handle every part of your home's exterior with the same relentless integrity and craftsmanship.</div>
+        </div>
+        <div class="services-row">
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">$2,000 OFF</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="service-name">Residential Roofing</div>
+                <div class="service-desc">Full tear-off, replacement, and new installs backed by 10 year warranty.</div>
+                <div class="service-pills"><span class="service-pill">Tear-off</span><span class="service-pill">10 Year Warranty</span></div>
+                <div class="service-cta">Get Estimate &rarr;</div>
+            </a>
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">FOR BUSINESSES</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+                </div>
+                <div class="service-name">Commercial &amp; Multi-Family</div>
+                <div class="service-desc">Flat roofs, TPO, EPDM, and metal systems for commercial properties.</div>
+                <div class="service-pills"><span class="service-pill">Flat Roof</span><span class="service-pill">TPO/EPDM</span></div>
+                <div class="service-cta">Get Quote &rarr;</div>
+            </a>
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">INSURANCE HELP</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="service-name">Storm Damage</div>
+                <div class="service-desc">Hail, wind, and storm restoration with full insurance claim support.</div>
+                <div class="service-pills"><span class="service-pill">Claim Help</span><span class="service-pill">Inspection</span></div>
+                <div class="service-cta">Start Claim &rarr;</div>
+            </a>
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">FULL SERVICE</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg>
+                </div>
+                <div class="service-name">General Construction</div>
+                <div class="service-desc">Additions, framing, remodels, and structural work built to the same standard as our roofing.</div>
+                <div class="service-pills"><span class="service-pill">Additions</span><span class="service-pill">Remodels</span></div>
+                <div class="service-cta">Learn More &rarr;</div>
+            </a>
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">TOTAL CARE CLUB</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <div class="service-name">Roofing Maintenance</div>
+                <div class="service-desc">Annual inspections and tune-ups to extend your roof's life by years.</div>
+                <div class="service-pills"><span class="service-pill">Inspection</span><span class="service-pill">Tune-up</span></div>
+                <div class="service-cta">Join Club &rarr;</div>
+            </a>
+            <a class="service-card" href="#mid-form">
+                <div class="service-badge">EXTERIOR</div>
+                <div class="sc-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </div>
+                <div class="service-name">Gutters</div>
+                <div class="service-desc">Seamless gutter installation, repair, and gutter guards to protect your home.</div>
+                <div class="service-pills"><span class="service-pill">Seamless</span><span class="service-pill">Guards</span></div>
+                <div class="service-cta">Get Estimate &rarr;</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- OWNER -->
+    <section class="owner" id="founder">
+        <div class="owner-inner">
+            <div class="owner-photo-wrap">
+                <div class="owner-photo-glow"></div>
+                <div class="owner-photo-frame">
+                    <svg viewBox="0 0 200 200" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                        <rect width="200" height="200" fill="#241313"/>
+                        <circle cx="100" cy="78" r="38" fill="#3a2018"/>
+                        <path d="M30 200c0-55 31-90 70-90s70 35 70 90z" fill="#3a2018"/>
+                    </svg>
+                </div>
+                <div class="owner-photo-corner tl"></div>
+                <div class="owner-photo-corner br"></div>
+            </div>
+            <div class="owner-quote-wrap">
+                <div class="owner-label">A Note From Our Founder</div>
+                <div class="owner-quote-mark">&ldquo;</div>
+                <p class="owner-quote-text">We don't cut corners. We outwork, outdeliver, and stand behind every roof and every build we touch. At JG Roofing &amp; Construction, our goal is simple: be Houston's most trusted name in roofing and construction by delivering consistent 5 star results and doing the job right, every single time. If it's not done right, it's not done.</p>
+                <div class="owner-sig">
+                    <div class="owner-sig-script">JG</div>
+                    <div class="owner-sig-title">Founder &amp; CEO, JG Roofing &amp; Construction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="values">
+        <h2>We Are Our Core Values</h2>
+        <div class="orbit-wrap" id="orbitWrap">
+            <div class="orbit-cursor-glow" id="orbitGlow"></div>
+            <svg class="orbit-lines" id="orbitLines" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet"></svg>
+            <div class="orbit-ring" id="orbitRing">
+                <div class="orbit-hub"><span class="orbit-hub-text">JG</span><div class="orbit-hub-glow"></div></div>
+                <div class="orbit-node" data-i="0" data-color="#D3A14B" onclick="orbClick(0)">
+                    <div class="orbit-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                    <span class="orbit-node-tip">Clean, exact, done right the first time</span>
+                    <div class="orbit-flash"></div>
+                    <span class="orbit-node-label">Precision</span>
+                </div>
+                <div class="orbit-node" data-i="1" data-color="#A08563" onclick="orbClick(1)">
+                    <div class="orbit-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 6v7c0 5 4 8 9 9 5-1 9-4 9-9V6l-9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <span class="orbit-node-tip">No excuses, just solutions</span>
+                    <div class="orbit-flash"></div>
+                    <span class="orbit-node-label">Ownership</span>
+                </div>
+                <div class="orbit-node" data-i="2" data-color="#8C5A2B" onclick="orbClick(2)">
+                    <div class="orbit-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 2a10 10 0 0 0 0 20"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div>
+                    <span class="orbit-node-tip">Clients always know what's happening</span>
+                    <div class="orbit-flash"></div>
+                    <span class="orbit-node-label">Communication</span>
+                </div>
+                <div class="orbit-node" data-i="3" data-color="#E8D9B5" onclick="orbClick(3)">
+                    <div class="orbit-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    <span class="orbit-node-tip">Setting the standard, not following it</span>
+                    <div class="orbit-flash"></div>
+                    <span class="orbit-node-label">Innovation</span>
+                </div>
+                <div class="orbit-node" data-i="4" data-color="#C9885B" onclick="orbClick(4)">
+                    <div class="orbit-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <span class="orbit-node-tip">Your home, treated like our own</span>
+                    <div class="orbit-flash"></div>
+                    <span class="orbit-node-label">Customer First</span>
+                </div>
+            </div>
+        </div>
+        <div class="orbit-detail" id="orbitDetail"><div class="orbit-detail-inner" id="orbitDetailInner"></div></div>
+        <div class="orbit-mobile">
+            <div class="orbit-m-card" style="--accent:#D3A14B;--accent-bg:rgba(211,161,75,0.08);--accent-border:rgba(211,161,75,0.2)">
+                <div class="orbit-m-icon" style="color:#D3A14B;border-color:rgba(211,161,75,0.3);background:rgba(211,161,75,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                <div><div class="orbit-m-name" style="color:#D3A14B">Precision in Execution</div><div class="orbit-m-tag">Our Standard</div><p class="orbit-m-desc">We care about every detail. The work is clean, exact, and done right the first time. If it's not right, it's not finished.</p></div>
+            </div>
+            <div class="orbit-m-card" style="--accent:#A08563;--accent-bg:rgba(160,133,99,0.08);--accent-border:rgba(160,133,99,0.2)">
+                <div class="orbit-m-icon" style="color:#A08563;border-color:rgba(160,133,99,0.3);background:rgba(160,133,99,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 6v7c0 5 4 8 9 9 5-1 9-4 9-9V6l-9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <div><div class="orbit-m-name" style="color:#A08563">Absolute Ownership</div><div class="orbit-m-tag">Our Promise</div><p class="orbit-m-desc">We own everything. Every call. Every project. Every result. No excuses, just solutions and follow through.</p></div>
+            </div>
+            <div class="orbit-m-card" style="--accent:#8C5A2B;--accent-bg:rgba(140,90,43,0.08);--accent-border:rgba(140,90,43,0.2)">
+                <div class="orbit-m-icon" style="color:#8C5A2B;border-color:rgba(140,90,43,0.3);background:rgba(140,90,43,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 2a10 10 0 0 0 0 20"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div>
+                <div><div class="orbit-m-name" style="color:#8C5A2B">Relentless Communication</div><div class="orbit-m-tag">Our Discipline</div><p class="orbit-m-desc">We keep it simple and clear. Our clients always know what's happening. Our team stays aligned. Nothing gets lost.</p></div>
+            </div>
+            <div class="orbit-m-card" style="--accent:#bba360;--accent-bg:rgba(232,217,181,0.15);--accent-border:rgba(232,217,181,0.3)">
+                <div class="orbit-m-icon" style="color:#bba360;border-color:rgba(232,217,181,0.4);background:rgba(232,217,181,0.12)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <div><div class="orbit-m-name" style="color:#bba360">Lead Through Innovation</div><div class="orbit-m-tag">Our Mission</div><p class="orbit-m-desc">We set the standard, not follow it. Better materials, better techniques, better service.</p></div>
+            </div>
+            <div class="orbit-m-card" style="--accent:#C9885B;--accent-bg:rgba(201,136,91,0.08);--accent-border:rgba(201,136,91,0.2)">
+                <div class="orbit-m-icon" style="color:#C9885B;border-color:rgba(201,136,91,0.3);background:rgba(201,136,91,0.08)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <div><div class="orbit-m-name" style="color:#C9885B">Customer First</div><div class="orbit-m-tag">Our Foundation</div><p class="orbit-m-desc">Your home is your biggest investment. We treat it that way. Clear communication, on time, 100% satisfied.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="guarantee" id="guarantee">
+        <div class="guarantee-watermark"><span>JG ROOFING &amp; CONSTRUCTION</span></div>
+        <div class="g-left">
+            <div class="g-badge-wrap">
+                <div class="g-glow"></div>
+                <div class="g-ring4"></div>
+                <div class="g-ring3"></div>
+                <div class="g-badge">
+                    <div class="g-badge-inner">
+                        <span class="g-badge-label">JG Roofing</span>
+                        <div class="g-badge-big">100%</div>
+                        <span class="g-badge-sub">Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-right">
+            <div class="section-label light">Our Promise To You</div>
+            <h2 class="g-title">Why Homeowners Choose JG Over Anyone Else.</h2>
+            <div class="g-table">
+                <div class="g-row g-row-head">
+                    <div class="g-col-label"></div>
+                    <div class="g-col-us">JG Roofing &amp; Construction</div>
+                    <div class="g-col-them">Other Contractors</div>
+                </div>
+                <div class="g-row"><div class="g-col-label">Free inspection</div><div class="g-col-us">&#10003; Always free</div><div class="g-col-them">Often charged</div></div>
+                <div class="g-row"><div class="g-col-label">Warranty</div><div class="g-col-us">5 &amp; 10 Year</div><div class="g-col-them">1-5 years</div></div>
+                <div class="g-row"><div class="g-col-label">Emergency service</div><div class="g-col-us">&#10003; 24/7</div><div class="g-col-them">&#10007; Business hrs</div></div>
+                <div class="g-row"><div class="g-col-label">$0 down financing</div><div class="g-col-us">&#10003; No lien</div><div class="g-col-them">Limited</div></div>
+                <div class="g-row"><div class="g-col-label">Insurance help</div><div class="g-col-us">&#10003; Full support</div><div class="g-col-them">On your own</div></div>
+                <div class="g-row"><div class="g-col-label">Own crews</div><div class="g-col-us">&#10003; In-house</div><div class="g-col-them">&#10007; Subbed out</div></div>
+                <div class="g-row"><div class="g-col-label">Google rating</div><div class="g-col-us">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9</div><div class="g-col-them">&#9733;&#9733;&#9733; 3.2</div></div>
+                <div class="g-row"><div class="g-col-label">Coverage</div><div class="g-col-us">Greater Houston, TX</div><div class="g-col-them">Single market</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MID FORM -->
+    <section class="mid-cta" id="mid-form">
+        <div class="mid-cta-left">
+            <h2>Claim Your $2,000 Summer Discount Before Spots Run Out.</h2>
+            <p class="mid-cta-sub">Only 15 spots available at this price. Offer ends <span class="promo-date"></span>.</p>
+            <ul class="mid-cta-list">
+                <li><span class="ck">&#10003;</span> Response within 24 hours</li>
+                <li><span class="ck">&#10003;</span> Estimates valid for one year</li>
+                <li><span class="ck">&#10003;</span> Zero spam. We promise.</li>
+            </ul>
+        </div>
+        <form class="mid-cta-form" id="midForm">
+            <input type="hidden" name="_subject" value="New Free Estimate Request -- JG Roofing & Construction">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="Form" value="Mid-Page Free Estimate Form">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="msf-row">
+                <input class="msf-input dark" type="text" name="first_name" placeholder="First name" required>
+                <input class="msf-input dark" type="text" name="last_name" placeholder="Last name" required>
+            </div>
+            <input class="msf-input dark" type="tel" name="phone" placeholder="Phone" required>
+            <input class="msf-input dark" type="email" name="email" placeholder="Email" required>
+            <input class="msf-input dark" type="text" name="address" placeholder="Address" required>
+            <select class="msf-input dark" name="service" required>
+                <option value="">Service needed</option>
+                <option>Roof Replacement</option>
+                <option>Emergency Repair</option>
+                <option>Storm Damage</option>
+                <option>Roof Inspection</option>
+                <option>General Construction</option>
+                <option>Gutters &amp; Siding</option>
+                <option>Maintenance</option>
+            </select>
+            <button class="msf-btn msf-submit" type="submit">Get Your Free Estimate &rarr;</button>
+        </form>
+    </section>
+
+    <!-- FOUR STEPS -->
+    <section class="steps">
+        <div class="steps-head">
+            <h2>Four Steps to a<br>Safer, Stronger Roof</h2>
+            <p>We make the process simple. We inspect the roof, document the damage, explain your options, and help you move forward without pressure.</p>
+        </div>
+        <div class="steps-row">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                <h3>Free Inspection</h3>
+                <p>We assess your roof's condition and document any damage &mdash; no cost, no pressure.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <div class="step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                <h3>Custom Estimate</h3>
+                <p>You get a clear, detailed quote with material options that fit your budget.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <div class="step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <h3>Expert Installation</h3>
+                <p>Our crew gets to work &mdash; clean, efficient, and built around your schedule.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">04</div>
+                <div class="step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D3A14B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h3>Final Walkthrough</h3>
+                <p>We inspect the finished job with you and back it with our warranty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+        <div class="reviews-head">
+            <h2>Real Reviews. <span class="accent">Real Results.</span></h2>
+            <p>Don't just take our word for it. Here's what Houston-area homeowners are saying after working with JG Roofing &amp; Construction.</p>
+        </div>
+        <div class="reviews-track" id="reviewsTrack">
+            <div class="review-card active">
+                <div class="review-quote-mark">&#8221;</div>
+                <p class="review-text">From the <mark>quick response</mark> to my call through the day they finished, I was so impressed. <mark>Extra helpful working with my insurance company</mark>. The crew was professional, fast, and thorough. I couldn't believe how clean they left everything. I'd <mark>recommend JG Roofing &amp; Construction</mark> to anyone in the Houston area.</p>
+                <div class="review-foot">
+                    <div class="review-avatar">R</div>
+                    <div class="review-who">
+                        <div class="review-name">Rachel M.</div>
+                        <div class="review-loc">Katy, TX &middot; Verified Homeowner</div>
+                    </div>
+                    <div class="review-stars-wrap">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-via">via Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-quote-mark">&#8221;</div>
+                <p class="review-text">From the estimate to the final walkthrough, everything was <mark>transparent</mark>. The job site was <mark>spotless</mark> every single day. Highly recommend JG Roofing &amp; Construction to anyone in Sugar Land.</p>
+                <div class="review-foot">
+                    <div class="review-avatar">D</div>
+                    <div class="review-who">
+                        <div class="review-name">David R.</div>
+                        <div class="review-loc">Sugar Land, TX &middot; Verified Homeowner</div>
+                    </div>
+                    <div class="review-stars-wrap">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-via">via Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-quote-mark">&#8221;</div>
+                <p class="review-text">Fast <mark>emergency response</mark> after a storm tore off part of our roof. They tarped it the same day and <mark>handled our insurance claim</mark> for us start to finish.</p>
+                <div class="review-foot">
+                    <div class="review-avatar">L</div>
+                    <div class="review-who">
+                        <div class="review-name">Lisa T.</div>
+                        <div class="review-loc">Cypress, TX &middot; Verified Homeowner</div>
+                    </div>
+                    <div class="review-stars-wrap">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-via">via Google</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-dots" id="reviewsDots">
+            <span class="rdot active" onclick="rgo(0)"></span>
+            <span class="rdot" onclick="rgo(1)"></span>
+            <span class="rdot" onclick="rgo(2)"></span>
+        </div>
+    </section>
+
+    <!-- SERVICE AREAS -->
+    <section class="areas" id="areas">
+        <div class="areas-head">
+            <h2>Proudly Serving Greater Houston</h2>
+            <p>JG Roofing &amp; Construction serves homeowners and businesses across Houston and every community within about 60 miles &mdash; including Katy, Cypress, Sugar Land, Conroe, Galveston, and Baytown &mdash; with crews routed by region.</p>
+        </div>
+        <div class="areas-tabs">
+            <button class="area-tab active" data-region="all">All Areas</button>
+            <button class="area-tab" data-region="central">Central</button>
+            <button class="area-tab" data-region="north">North</button>
+            <button class="area-tab" data-region="east">East</button>
+            <button class="area-tab" data-region="southeast">Southeast</button>
+            <button class="area-tab" data-region="south">South</button>
+            <button class="area-tab" data-region="southwest">Southwest</button>
+        </div>
+        <div class="areas-body">
+            <div class="areas-list">
+                <div class="areas-list-label">Service Areas &mdash; 60 Mile Radius</div>
+                <div class="area-state-row"><span>Central &mdash; Houston, Bellaire, Deer Park + 5 more</span><span class="area-count">8</span></div>
+                <div class="area-state-row"><span>North &mdash; Conroe, Spring, The Woodlands + 18 more</span><span class="area-count">21</span></div>
+                <div class="area-state-row"><span>East &mdash; Baytown, Liberty, Dayton + 7 more</span><span class="area-count">10</span></div>
+                <div class="area-state-row"><span>Southeast &mdash; Galveston, League City, Pasadena + 11 more</span><span class="area-count">14</span></div>
+                <div class="area-state-row"><span>South &mdash; Pearland, Alvin, Lake Jackson + 9 more</span><span class="area-count">12</span></div>
+                <div class="area-state-row"><span>Southwest &mdash; Katy, Sugar Land, Richmond + 10 more</span><span class="area-count">13</span></div>
+            </div>
+            <div class="areas-map" id="areasMap"></div>
+        </div>
+    </section>
+
+    <!-- TALK TO REAL PERSON -->
+    <section class="talk-cta">
+        <div class="talk-cta-row">
+            <div class="talk-cta-card">
+                <div class="talk-cta-label">Talk to a real person &middot; English</div>
+                <div class="talk-cta-name">Christopher G.</div>
+                <a href="tel:8324300148" class="talk-cta-phone">(832) 430-0148</a>
+                <a href="tel:8324300148" class="talk-cta-btn">Call now &rarr;</a>
+            </div>
+            <div class="talk-cta-card">
+                <div class="talk-cta-label">Habla con una persona real &middot; Espa&ntilde;ol</div>
+                <div class="talk-cta-name">Joel G.</div>
+                <a href="tel:8325283793" class="talk-cta-phone">(832) 528-3793</a>
+                <a href="tel:8325283793" class="talk-cta-btn">Llamar ahora &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/images/logo-icon.png" alt="JG Roofing & Construction">
+                <span>JG ROOFING &amp; CONSTRUCTION</span>
+                <p>Built to Protect. Crafted to Last. Houston's premier roofing &amp; construction contractor.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Services</div>
+                <a href="#services">Roof Replacement</a>
+                <a href="#services">Emergency Repair</a>
+                <a href="#services">Storm Damage</a>
+                <a href="#guarantee">Premium Roof</a>
+                <a href="#services">General Construction</a>
+                <a href="#services">Gutters &amp; Siding</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Locations</div>
+                <a href="#areas">Houston</a>
+                <a href="#areas">Katy</a>
+                <a href="#areas">Cypress</a>
+                <a href="#areas">Sugar Land</a>
+                <a href="#areas">Conroe</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Contact</div>
+                <a href="tel:8324300148">(832) 430-0148 &middot; English</a>
+                <a href="tel:8325283793">(832) 528-3793 &middot; Espa&ntilde;ol</a>
+                <a href="mailto:jgroofingconstruction01@gmail.com">jgroofingconstruction01@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; <span id="year"></span> JG Roofing &amp; Construction</span>
+            <span class="footer-trust">Trusted by 5,300+ Houston-area homeowners</span>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">i</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<a href="#mid-form" class="float-cta">Free Estimate &rarr;</a>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
