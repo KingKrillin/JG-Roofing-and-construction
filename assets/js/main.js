@@ -19,6 +19,9 @@
     if (!btn || !links) return;
     btn.addEventListener('click', function(){ links.classList.toggle('open'); });
 
+    var back = document.getElementById('navBack');
+    if (back) back.addEventListener('click', function(){ links.classList.remove('open'); });
+
     document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
         a.addEventListener('click', function(e){
             if (window.innerWidth > 760) return;
@@ -407,6 +410,26 @@ var HOUSTON_CITIES = {
         if (y > lastY && y > 300) bar.style.transform = 'translateY(-100%)';
         else bar.style.transform = 'translateY(0)';
         bar.style.transition = 'transform .25s';
+        lastY = y;
+    });
+})();
+
+// ===== Mobile header: hide on scroll down, reveal on scroll up =====
+(function navAutoHide(){
+    var nav = document.getElementById('mainNav');
+    var navLinks = document.querySelector('.nav-links');
+    if (!nav) return;
+    var lastY = window.scrollY;
+    var mq = window.matchMedia('(max-width: 760px)');
+    window.addEventListener('scroll', function(){
+        var y = window.scrollY;
+        if (!mq.matches || (navLinks && navLinks.classList.contains('open'))){
+            nav.style.transform = 'translateY(0)';
+            lastY = y;
+            return;
+        }
+        nav.style.transition = 'transform .25s';
+        nav.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : 'translateY(0)';
         lastY = y;
     });
 })();
