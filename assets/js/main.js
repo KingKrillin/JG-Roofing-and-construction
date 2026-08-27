@@ -1,11 +1,3 @@
-// ===== Promo end date (15 days out from page load, fixed for the session) =====
-(function setPromoDates(){
-    var end = new Date();
-    end.setDate(end.getDate() + 15);
-    var label = end.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-    document.querySelectorAll('.promo-date').forEach(function(el){ el.textContent = label; });
-})();
-
 // ===== Footer year =====
 (function setYear(){
     var y = document.getElementById('year');
@@ -106,18 +98,18 @@ function submitLeadForm(form, onSuccess){
     f.addEventListener('submit', function(e){
         e.preventDefault();
         submitLeadForm(f, function(){
-            f.innerHTML = '<div class="msf-done"><div class="msf-done-icon">&#10003;</div><h3 style="color:#fff">Thank You!</h3><p style="color:#cabfb2">Your submission was received &mdash; we\'ll get right back to you as soon as possible.</p></div>';
+            f.innerHTML = '<div class="msf-done"><div class="msf-done-icon">&#10003;</div><h3 style="color:#fff">Thank You!</h3><p style="color:#C9CDD1">Your submission was received &mdash; we\'ll get right back to you as soon as possible.</p></div>';
         });
     });
 })();
 
 // ===== Core values orbit (animated constellation) =====
 var ORBIT_DATA = [
-    { name: 'Precision', tag: 'Our Standard', color: '#D3A14B', desc: "We care about every detail. The work is clean, exact, and done right the first time. If it's not right, it's not finished." },
-    { name: 'Ownership', tag: 'Our Promise', color: '#A08563', desc: 'We own everything. Every call. Every project. Every result. No excuses, just solutions and follow through.' },
-    { name: 'Communication', tag: 'Our Discipline', color: '#8C5A2B', desc: "We keep it simple and clear. Our clients always know what's happening. Our team stays aligned. Nothing gets lost." },
-    { name: 'Innovation', tag: 'Our Mission', color: '#E8D9B5', desc: "We set the standard, not follow it. Better materials, better techniques, better service." },
-    { name: 'Customer First', tag: 'Our Foundation', color: '#C9885B', desc: 'Your home is your biggest investment. We treat it that way. Clear communication, on time, 100% satisfied.' }
+    { name: 'Precision', tag: 'Our Standard', color: '#E8121C', desc: "We care about every detail, from the first nail to the final walkthrough. Every measurement, cut, and fastener is placed with intention — because a roof or a remodel is only as strong as the crew's attention to the parts nobody else notices. If it's not right, it's not finished." },
+    { name: 'Ownership', tag: 'Our Promise', color: '#9AA0A6', desc: "We own everything that happens on our job sites — every call, every delay, every decision, every result. When something goes wrong, we don't point fingers or hide behind excuses; we fix it, explain it, and make it right. That's what it means to actually stand behind your work." },
+    { name: 'Communication', tag: 'Our Discipline', color: '#B0181F', desc: "Confusion is where good projects go bad. We keep it simple: clients know what's happening at every stage, our crews stay aligned in the field, and nothing gets lost between the estimate and the final invoice. You'll never have to chase us for an update." },
+    { name: 'Innovation', tag: 'Our Mission', color: '#FFFFFF', desc: "We're not interested in doing things the way roofing has always been done. We invest in better materials, smarter installation techniques, and modern tools — drone inspections, digital estimates, tighter project tracking — so every job reflects where the industry is headed, not where it's been." },
+    { name: 'Customer First', tag: 'Our Foundation', color: '#FF7A7A', desc: "Your home or business is one of the biggest investments you'll make, and we treat every project like it's our own. Clear pricing, honest timelines, and a crew that shows up when we say we will — that's the baseline, not the upsell." }
 ];
 
 var orbActiveIndex = null;
@@ -212,7 +204,7 @@ function orbClick(i){
             var x = ((r.left + r.width / 2) - wrapRect.left) / wrapRect.width * 600;
             var y = ((r.top + r.height / 2) - wrapRect.top) / wrapRect.height * 600;
             var isActive = orbActiveIndex === i;
-            var color = node.getAttribute('data-color') || '#D3A14B';
+            var color = node.getAttribute('data-color') || '#E8121C';
 
             var line = document.createElementNS(svgns, 'line');
             line.setAttribute('x1', 300);
@@ -266,7 +258,38 @@ function rgo(i){
     }, 6000);
 })();
 
-// ===== Service area cities within ~60 miles of downtown Houston, grouped by region =====
+// ===== Project gallery lightbox =====
+var PROJECT_PHOTOS = Array.prototype.slice.call(document.querySelectorAll('.projects-grid .project-tile img')).map(function(img){ return { src: img.getAttribute('src'), alt: img.getAttribute('alt') }; });
+var lightboxIndex = 0;
+function openLightbox(i){
+    if (!PROJECT_PHOTOS.length) return;
+    lightboxIndex = i;
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    img.src = PROJECT_PHOTOS[i].src;
+    img.alt = PROJECT_PHOTOS[i].alt || '';
+    box.classList.add('open');
+}
+function closeLightbox(e){
+    if (e) e.stopPropagation();
+    document.getElementById('lightbox').classList.remove('open');
+}
+function navLightbox(e, dir){
+    if (e) e.stopPropagation();
+    lightboxIndex = (lightboxIndex + dir + PROJECT_PHOTOS.length) % PROJECT_PHOTOS.length;
+    var img = document.getElementById('lightboxImg');
+    img.src = PROJECT_PHOTOS[lightboxIndex].src;
+    img.alt = PROJECT_PHOTOS[lightboxIndex].alt || '';
+}
+document.addEventListener('keydown', function(e){
+    var box = document.getElementById('lightbox');
+    if (!box || !box.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') navLightbox(null, 1);
+    if (e.key === 'ArrowLeft') navLightbox(null, -1);
+});
+
+// ===== Service area cities around Houston =====
 var HOUSTON_CITIES = {
     all: [
         { name: 'Houston', coords: [29.7604, -95.3698] },
@@ -347,57 +370,36 @@ var HOUSTON_CITIES = {
         { name: 'Sealy', coords: [29.7647, -96.1577] },
         { name: 'Wharton', coords: [29.3116, -96.103] },
         { name: 'Needville', coords: [29.3958, -95.8266] }
-    ],
-    central: ['Houston', 'Bellaire', 'Galena Park', 'Jacinto City', 'South Houston', 'Jersey Village', 'Channelview', 'Deer Park'],
-    north: ['Aldine', 'Spring', 'Humble', 'Atascocita', 'Cypress', 'Tomball', 'Magnolia', 'Hockley', 'Montgomery', 'Willis', 'The Woodlands', 'Shenandoah', 'Oak Ridge North', 'Conroe', 'Splendora', 'New Caney', 'Porter', 'Huffman', 'Waller', 'Hempstead', 'Brookshire'],
-    east: ['Baytown', 'Beach City', 'Mont Belvieu', 'Anahuac', 'Liberty', 'Dayton', 'Cleveland', 'Crosby', 'Highlands', 'La Porte'],
-    southeast: ['Pasadena', 'League City', 'Webster', 'Seabrook', 'Kemah', 'Dickinson', 'Friendswood', 'Galveston', 'Texas City', 'La Marque', 'Hitchcock', 'Santa Fe', 'Bacliff', 'San Leon'],
-    south: ['Pearland', 'Manvel', 'Alvin', 'Arcola', 'Iowa Colony', 'Rosharon', 'Angleton', 'Brazoria', 'West Columbia', 'Lake Jackson', 'Danbury', 'Sweeny'],
-    southwest: ['Missouri City', 'Sugar Land', 'Stafford', 'Fresno', 'Richmond', 'Rosenberg', 'Fulshear', 'Katy', 'Simonton', 'Wallis', 'Sealy', 'Wharton', 'Needville']
+    ]
 };
-
-// ===== Service area tabs =====
-(function areaTabs(){
-    var tabs = document.querySelectorAll('.area-tab');
-    tabs.forEach(function(tab){
-        tab.addEventListener('click', function(){
-            tabs.forEach(function(t){ t.classList.remove('active'); });
-            tab.classList.add('active');
-            if (window.jgMap) window.jgMap.showRegion(tab.dataset.region);
-        });
-    });
-})();
 
 // ===== Leaflet service-area map =====
 (function initMap(){
     var el = document.getElementById('areasMap');
     if (!el || typeof L === 'undefined') return;
     var map = L.map(el, { scrollWheelZoom: false });
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CARTO',
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
         maxZoom: 19
     }).addTo(map);
 
-    var cityMarkers = {};
-    var allLatLngs = [];
     HOUSTON_CITIES.all.forEach(function(c){
-        cityMarkers[c.name] = L.circleMarker(c.coords, { radius: 5, color: '#D3A14B', fillColor: '#D3A14B', fillOpacity: 1, weight: 1 })
+        var isHub = c.name === 'Houston';
+        L.circleMarker(c.coords, {
+            radius: isHub ? 8 : 6,
+            color: '#fff',
+            weight: 2,
+            fillColor: '#E8121C',
+            fillOpacity: 1
+        })
             .addTo(map)
-            .bindPopup(c.name);
-        allLatLngs.push(c.coords);
-    });
-    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [18, 18] });
-
-    window.jgMap = {
-        showRegion: function(region){
-            var activeNames = region === 'all' ? null : HOUSTON_CITIES[region];
-            HOUSTON_CITIES.all.forEach(function(c){
-                var marker = cityMarkers[c.name];
-                var visible = !activeNames || activeNames.indexOf(c.name) !== -1;
-                marker.setStyle({ opacity: visible ? 1 : 0.12, fillOpacity: visible ? 1 : 0.12 });
+            .bindTooltip(c.name, {
+                direction: 'top',
+                offset: [0, -6],
+                className: isHub ? 'city-label city-label-hub' : 'city-label'
             });
-        }
-    };
+    });
+    map.setView([29.7604, -95.3698], 9);
 })();
 
 // ===== Sticky CTA hide on scroll down past hero =====
