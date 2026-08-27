@@ -23,6 +23,22 @@
     });
 })();
 
+// ===== Move the hero form into its own section on mobile only; desktop keeps it in the hero =====
+(function relocateHeroForm(){
+    var heroRight = document.querySelector('.hero-right');
+    var heroSection = document.getElementById('home');
+    var mobileSlot = document.getElementById('mobileFormSection');
+    if (!heroRight || !heroSection || !mobileSlot) return;
+    var mq = window.matchMedia('(max-width: 760px)');
+    function place(){
+        if (mq.matches) mobileSlot.appendChild(heroRight);
+        else heroSection.appendChild(heroRight);
+    }
+    place();
+    if (mq.addEventListener) mq.addEventListener('change', place);
+    else mq.addListener(place);
+})();
+
 // ===== Multi-step hero form =====
 function ss(card){ // select service
     document.querySelectorAll('#s1 .msf-scard').forEach(function(c){ c.classList.remove('selected'); });
@@ -257,6 +273,45 @@ function rgo(i){
         rgo((reviewIndex + 1) % cards.length);
     }, 6000);
 })();
+
+// ===== Aerial flyover video tiles: click play opens fullscreen for a better look =====
+function projectVideoTap(e, video){
+    e.stopPropagation();
+    video.muted = false;
+    if (video.webkitEnterFullscreen){
+        video.webkitEnterFullscreen();
+    } else if (video.requestFullscreen || video.webkitRequestFullscreen){
+        video.controls = true;
+        (video.requestFullscreen || video.webkitRequestFullscreen).call(video);
+    }
+    video.play();
+}
+document.addEventListener('fullscreenchange', function(){
+    if (!document.fullscreenElement){
+        document.querySelectorAll('.project-video').forEach(function(v){
+            v.controls = false;
+            v.muted = true;
+            v.pause();
+        });
+    }
+});
+document.addEventListener('webkitendfullscreen', function(e){
+    var v = e.target;
+    if (v && v.classList && v.classList.contains('project-video')){
+        v.muted = true;
+        v.pause();
+    }
+}, true);
+
+// ===== Apartment complex gallery: expand/collapse the rest of the photos =====
+function toggleApartmentGallery(){
+    var grid = document.getElementById('apartmentGrid');
+    var toggle = document.getElementById('apartmentFolderToggle');
+    var text = toggle.querySelector('.project-folder-text');
+    var expanded = grid.classList.toggle('expanded');
+    toggle.classList.toggle('open', expanded);
+    text.textContent = expanded ? 'Show Less' : 'Open More';
+}
 
 // ===== Project gallery lightbox =====
 var PROJECT_PHOTOS = Array.prototype.slice.call(document.querySelectorAll('.projects-grid .project-tile img')).map(function(img){ return { src: img.getAttribute('src'), alt: img.getAttribute('alt') }; });

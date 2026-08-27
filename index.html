@@ -196,6 +196,9 @@
         </div>
     </section>
 
+    <!-- MOBILE FORM (JS moves .hero-right in here on mobile only; desktop keeps it in the hero) -->
+    <section class="mobile-form-section" id="mobileFormSection"></section>
+
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="svc-head">
@@ -306,8 +309,15 @@
         </div>
         <div class="projects-grid projects-grid-lead">
             <div class="project-tile project-tile-video">
-                <video class="project-video" muted loop playsinline preload="metadata" poster="assets/images/projects/project-01.jpg" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="event.stopPropagation();this.paused?this.play():this.pause()">
+                <video class="project-video" muted loop playsinline preload="metadata" poster="assets/images/projects/cover-walkthrough.jpg" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="projectVideoTap(event,this)">
                     <source src="assets/videos/project-walkthrough.mp4" type="video/mp4">
+                </video>
+                <div class="project-play" aria-hidden="true">&#9654;</div>
+                <div class="project-tag">Aerial Flyover</div>
+            </div>
+            <div class="project-tile project-tile-video">
+                <video class="project-video" muted loop playsinline preload="metadata" poster="assets/images/projects/cover-hero-flyover.jpg" onmouseenter="this.play()" onmouseleave="this.pause()" onclick="projectVideoTap(event,this)">
+                    <source src="assets/videos/hero.mp4" type="video/mp4">
                 </video>
                 <div class="project-play" aria-hidden="true">&#9654;</div>
                 <div class="project-tag">Aerial Flyover</div>
@@ -323,22 +333,27 @@
 
         <div class="projects-group">
             <h3 class="projects-group-title">Apartment Complex <span>&mdash; New Construction</span></h3>
-            <div class="projects-grid">
+            <div class="projects-grid" id="apartmentGrid">
                 <div class="project-tile" onclick="openLightbox(1)"><img src="assets/images/projects/project-02.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
                 <div class="project-tile" onclick="openLightbox(2)"><img src="assets/images/projects/project-03.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(3)"><img src="assets/images/projects/project-04.jpg" loading="lazy" alt="JG Roofing crew installing shingles on an apartment complex roof"></div>
-                <div class="project-tile" onclick="openLightbox(4)"><img src="assets/images/projects/project-05.jpg" loading="lazy" alt="Aerial view of apartment complex roofing installation"></div>
-                <div class="project-tile" onclick="openLightbox(5)"><img src="assets/images/projects/project-06.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(6)"><img src="assets/images/projects/project-07.jpg" loading="lazy" alt="Material staging area for apartment complex roofing job"></div>
-                <div class="project-tile" onclick="openLightbox(7)"><img src="assets/images/projects/project-08.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(8)"><img src="assets/images/projects/project-09.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(9)"><img src="assets/images/projects/project-10.jpg" loading="lazy" alt="Aerial view of apartment complex roofing installation"></div>
-                <div class="project-tile" onclick="openLightbox(10)"><img src="assets/images/projects/project-11.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(11)"><img src="assets/images/projects/project-12.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(12)"><img src="assets/images/projects/project-13.jpg" loading="lazy" alt="Apartment complex under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(13)"><img src="assets/images/projects/project-14.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(14)"><img src="assets/images/projects/project-15.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
-                <div class="project-tile" onclick="openLightbox(15)"><img src="assets/images/projects/project-16.jpg" loading="lazy" alt="Ridge cap detail on apartment complex roof installation"></div>
+                <div class="project-tile project-tile-folder" id="apartmentFolderToggle" onclick="toggleApartmentGallery()">
+                    <svg class="project-folder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+                    <div class="project-folder-count">+13 Photos</div>
+                    <div class="project-folder-label"><span class="project-folder-text">Open More</span> <span class="project-folder-chevron">&#9660;</span></div>
+                </div>
+                <div class="project-tile project-extra" onclick="openLightbox(3)"><img src="assets/images/projects/project-04.jpg" loading="lazy" alt="JG Roofing crew installing shingles on an apartment complex roof"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(4)"><img src="assets/images/projects/project-05.jpg" loading="lazy" alt="Aerial view of apartment complex roofing installation"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(5)"><img src="assets/images/projects/project-06.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(6)"><img src="assets/images/projects/project-07.jpg" loading="lazy" alt="Material staging area for apartment complex roofing job"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(7)"><img src="assets/images/projects/project-08.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(8)"><img src="assets/images/projects/project-09.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(9)"><img src="assets/images/projects/project-10.jpg" loading="lazy" alt="Aerial view of apartment complex roofing installation"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(10)"><img src="assets/images/projects/project-11.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(11)"><img src="assets/images/projects/project-12.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(12)"><img src="assets/images/projects/project-13.jpg" loading="lazy" alt="Apartment complex under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(13)"><img src="assets/images/projects/project-14.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(14)"><img src="assets/images/projects/project-15.jpg" loading="lazy" alt="Apartment complex roof under construction, Houston area"></div>
+                <div class="project-tile project-extra" onclick="openLightbox(15)"><img src="assets/images/projects/project-16.jpg" loading="lazy" alt="Ridge cap detail on apartment complex roof installation"></div>
             </div>
         </div>
 
